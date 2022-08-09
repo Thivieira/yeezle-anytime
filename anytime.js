@@ -10,24 +10,24 @@
 // @run-at       document-start
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
-
-    var mysteryNumber = {};
-    var mysteryDouble = {};
-    var mysterySong = {};
+    window.resetGameState();
+    window.mysteryNumber = {};
+    window.mysteryDouble = {};
+    window.mysterySong = {};
     async function getRandomMysterySong() {
-    mysteryNumber = Math.floor(Math.random() * 175) + 1;
-    await fetch('/datasheetNoSkit.json')
-        .then(response => response.json())
-        .then(data => {
-            mysteryDouble = data.numbers[mysteryNumber].title
-        })
-    await fetch('/datasheetNoSkit.json')
-        .then(response => response.json())
-        .then(data => {
-            mysterySong = data.songs[mysteryDouble]
-        })
+        mysteryNumber = Math.floor(Math.random() * 175) + 1;
+        await fetch('/datasheetNoSkit.json')
+            .then(response => response.json())
+            .then(data => {
+                mysteryDouble = data.numbers[mysteryNumber].title
+            })
+        await fetch('/datasheetNoSkit.json')
+            .then(response => response.json())
+            .then(data => {
+                mysterySong = data.songs[mysteryDouble]
+            })
     }
     getRandomMysterySong();
 })();
