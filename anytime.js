@@ -12,7 +12,7 @@
 
 (function () {
     'use strict';
-    window.resetGameState();
+    window.localStorage.clear();
     window.mysteryNumber = {};
     window.mysteryDouble = {};
     window.mysterySong = {};
