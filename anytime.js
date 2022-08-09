@@ -7,7 +7,6 @@
 // @match        https://yeezle.xyz/
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=yeezle.xyz
 // @grant        none
-// @run-at       document-start
 // ==/UserScript==
 
 (function () {
